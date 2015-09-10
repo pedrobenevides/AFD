@@ -33,13 +33,13 @@ namespace Faculdade.AFD
             }
 
             var arrayEstados = Estados.ArrayDeEstados();
-            var numeroDoEstadoAtual = arrayEstados.IndexOf(EstadoAtual) * -1;
+            var numeroDoEstadoAtual = arrayEstados.IndexOf(EstadoAtual);
             
             var proximoEstado = arrayEstados[++numeroDoEstadoAtual];
 
             if (token == proximoEstado.ElementAt(1))
             {
-                Console.WriteLine("{0} -> {1}", EstadoAtual, proximoEstado);
+                Console.WriteLine("Passou do estado: {0} Para o estado: -> {1}", EstadoAtual, proximoEstado);
                 EstadoAtual = proximoEstado;
                 return;
             }

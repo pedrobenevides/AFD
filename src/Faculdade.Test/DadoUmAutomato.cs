@@ -40,13 +40,10 @@ namespace Faculdade.Test
          [TestMethod]
          public void PossoAvancarEstadoAposOInicialSeHouverEstadoAtual()
          {
-             automato.EstadoAtual = "1a0";
+             var estadoAtual = "0a1";
+             automato.EstadoAtual = estadoAtual;
              automato.MudarEstado('b');
-             Assert.AreNotEqual("1a0", automato.EstadoAtual);
+             Assert.AreNotEqual(estadoAtual, automato.EstadoAtual);
          }
-
-         
-
-
     }
 }
