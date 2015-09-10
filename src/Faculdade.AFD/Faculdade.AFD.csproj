@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="Automato.cs" />
     <Compile Include="AutomatoGenerico.cs" />
+    <Compile Include="Interfaces\ILeitor.cs" />
+    <Compile Include="Leitores\LeitorTxt.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StringExtensions.cs" />

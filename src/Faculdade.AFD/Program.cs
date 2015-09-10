@@ -1,4 +1,6 @@
 ﻿using System;
+using Faculdade.AFD.Interfaces;
+using Faculdade.AFD.Leitores;
 
 namespace Faculdade.AFD
 {
@@ -6,7 +8,15 @@ namespace Faculdade.AFD
     {
         static void Main(string[] args)
         {
-            const string estados = "0a1;1b2;2b0;0c3";
+            ILeitor leitorDeArquivo = new LeitorTxt();
+            var estados = leitorDeArquivo.Ler("teste.txt"); //"0a1;1b2;2b0;0c3";
+
+            if (string.IsNullOrEmpty(estados))
+            {
+                Console.ReadKey();
+                return;
+            }
+
             var automato = new AutomatoGenerico(estados);
 
             foreach (var estado in estados.ArrayDeEstados())
