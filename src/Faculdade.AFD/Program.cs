@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using Faculdade.AFD.Interfaces;
 using Faculdade.AFD.Leitores;
 
@@ -22,6 +23,7 @@ namespace Faculdade.AFD
             foreach (var estado in estados.ArrayDeEstados())
             {
                 var token = automato.ObterToken(estado);
+                Thread.Sleep(TimeSpan.FromSeconds(1));
                 automato.MudarEstado(token);
             }
 
