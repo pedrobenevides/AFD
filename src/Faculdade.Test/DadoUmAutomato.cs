@@ -1,5 +1,4 @@
 ﻿ using System;
- using System.Security.Policy;
  using Faculdade.AFD;
  using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -32,7 +31,7 @@ namespace Faculdade.Test
          }
 
          [TestMethod, ExpectedException(typeof(Exception))]
-         public void AoMudarDeEstadoSeEstadoAtualForNuloEoTokenForDiferenteDoTokenDoQ0()
+         public void AoMudarDeEstadoSeEstadoAtualForNuloEoTokenForDiferenteDoTokenDoQ0LancaException()
          {
              automato.MudarEstado('b');
          }

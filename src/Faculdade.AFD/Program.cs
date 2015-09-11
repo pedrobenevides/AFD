@@ -19,16 +19,29 @@ namespace Faculdade.AFD
             }
 
             var automato = new AutomatoGenerico(estados);
+            var count = 0;
+            bool naoDeuCerto = false;
 
-            foreach (var estado in estados.ArrayDeEstados())
+            for (int i = 0; i < 5; i++)
             {
-                var token = automato.ObterToken(estado);
-                Thread.Sleep(TimeSpan.FromSeconds(1));
-                automato.MudarEstado(token);
+                naoDeuCerto = automato.MudarEstado2(LerToken());
             }
 
-            Console.WriteLine("Autômato finalizado com sucesso!");
+            if(!naoDeuCerto)
+                Console.WriteLine("Palavra rejeitada!");
+
             Console.ReadKey();
+        }
+
+        private static char LerToken()
+        {
+            Console.WriteLine("Informe o token");
+            var result = Console.ReadLine();
+
+            if(string.IsNullOrEmpty(result))
+                throw new Exception("Não foi informado um token válido.");
+
+            return result[0];
         }
     }
 }
